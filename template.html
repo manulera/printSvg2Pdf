@@ -1,0 +1,35 @@
+<head>
+    <style id='other'>
+        html,
+        body {
+            width: fit-content;
+            height: fit-content;
+            margin: 0px;
+            padding: 0px;
+
+        }
+    </style>
+    <!-- Tag to append the style -->
+    <style id=page_style>
+    </style>
+
+</head>
+
+<body id="test">
+    <object data="__targetfile__">
+</body>
+
+<script>
+    window.addEventListener("load", fixpage);
+
+    function fixpage() {
+        console.log('ran')
+        let renderBlock = document.getElementsByTagName("body")[0];
+        let renderBlockInfo = window.getComputedStyle(renderBlock);
+        // fix chrome page bug
+        fixHeight = parseInt(renderBlockInfo.height) + 1 + "px";
+        document.getElementById("page_style").innerHTML = `@page { size: ${renderBlockInfo.width} ${fixHeight}; margin : 0px } `
+
+
+    }
+</script>
