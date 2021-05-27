@@ -11,7 +11,7 @@ In the file `printSvg2Pdf.sh` set the following variables:
 Then simply:
 
 ```
-bash printSvg2Pdf.sh input_file.svg output_file.pdf
+bash printSvg2Pdf.sh example_input.svg example_output.pdf
 ```
 
 ## What it does
